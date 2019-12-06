@@ -52,9 +52,9 @@
               <p style="text-align:center">
                 <name>Chris Rockwell</name>
               </p>
-              <p>I am a second year Master's student at the <a href="https://www.cse.umich.edu/">University of Michigan</a> in Computer Science and Engineering. I am currently researching in computer vision and machine learning with Prof. <a href="https://web.eecs.umich.edu/~fouhey/"> David Fouhey </a> and previously worked with Prof. <a href="https://www.cs.princeton.edu/~jiadeng/"> Jia Deng </a>.
+              <p>I am a second year Master's student at the <a href="https://www.cse.umich.edu/">University of Michigan</a> in Computer Science and Engineering. I am currently conducting research in computer vision and machine learning with Prof. <a href="https://web.eecs.umich.edu/~fouhey/"> David Fouhey </a> and previously worked with Prof. <a href="https://www.cs.princeton.edu/~jiadeng/"> Jia Deng </a>.
               </p>
-              <p> I previously worked as a trader at <a href="https://www.citadel.com/"> Citadel LLC </a>, where I applied statistical arbitrage in fixed income. Earlier, I structured exotic options and created systematic hedging strategies at <a href="https://group.bnpparibas/en/"> BNP Paribas </a>. I also did my Bachelor's at the University of Michigan, where I researched High Frequency Trading and AI under Prof. <a href="https://strategicreasoning.org/michael-p-wellman/"> Michael Wellman</a>. 
+              <p> Before grad school, I worked as a trader at <a href="https://www.citadel.com/"> Citadel LLC </a>, where I applied statistical arbitrage in fixed income. Earlier, I structured exotic options and created systematic hedging strategies at <a href="https://group.bnpparibas/en/"> BNP Paribas </a>. I also did my Bachelor's at the University of Michigan, where I researched High Frequency Trading and AI under Prof. <a href="https://strategicreasoning.org/michael-p-wellman/"> Michael Wellman</a>. 
               </p>
               <p style="text-align:center">
                 <a href="https://github.com/crockwell">Github</a> &nbsp/&nbsp
@@ -72,8 +72,8 @@
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>Research</heading>
               <p>
-                Within computer vision, I'm particularly interested in using semi-supervised methods and video, creating 
-                generative models, and understanding humans and scenes, particularly in 3D. I'm also curious to
+                Within computer vision, I'm particularly interested in using semi-supervised methods and video, understanding humans and scenes, and creating 
+                generative models, particularly in 3D. I'm also curious to
                 explore multi-modal tasks and supervision, and in using structured prediction, especially for few-shot settings.
               </p>
             </td>
@@ -114,10 +114,12 @@
               [<a href="https://github.com/crockwell/pytorch_stacked_hourglass_attention">code: attention</a>][<a href="http://www-personal.umich.edu/~cnris/attention_2hg/checkpoint.pt">pretrained model, 2HG attention</a>] 
               <br>
                 [<a href="https://github.com/crockwell/pytorch_stacked_hourglass_cutout">code: regularization</a>][<a href="http://www-personal.umich.edu/~cnris/regularization_8hg/checkpoint.pt">pretrained model, 8HG regularization</a>]
-              <p> We increase performance of <em> Newell et al.</em>'s <a href="https://arxiv.org/pdf/1603.06937.pdf">Stacked Hourglass Networks </a> on MPII using a simple additional bottleneck to decoder network used as attention. We also found cutout and vertical flipping improved model performance.
+              <br> [<a href="https://github.com/princeton-vl/pytorch_stacked_hourglass">My Pytorch implementation of Stacked Hourglass Networks</a>>]
+              <p> We increase performance of <em> Newell et al.</em>'s <a href="https://arxiv.org/pdf/1603.06937.pdf">Stacked Hourglass Networks </a> on MPII using a decoder network as attention, along with 
+                cutout and vertical flipping.
                <!--<br> Using the 2HG model, this improved validation performance 0.4% and improved performance 0.7% when also using cutout and vertical flipping. On the 8HG model, we were also able to improve test performance from 90.9% to 91.3% by simply adding cutout and vertical flipping. Finally, we increased precision of network confidence and explored utilizing confidence for curriculum sampling of tail cases.
                 -->
-                In addition, we increase precision of network confidence and explore utilizing confidence for curriculum sampling of tail cases.
+                In addition, we improved precision of network confidence and explored utilizing confidence for curriculum sampling of tail cases.
               </p>
             </td>
           </tr>
@@ -132,7 +134,7 @@
               <br>
               Advisor: Alejandro Newell and Prof. Jia Deng 
               <br>  
-              <p> We improve a simple fine-tuning baseline on <a href="https://arxiv.org/pdf/1903.03096.pdf"> Meta-Dataset </a> to within 0.1 <em>average rank</em> (minimum reportable difference) of the authors' best meta-learning based method using higher regularization on fine-tuning layer compared to the backbone.
+              <p> We improved a simple fine-tuning baseline on <a href="https://arxiv.org/pdf/1903.03096.pdf"> Meta-Dataset </a> to within 0.1 <em>average rank</em> (minimum reportable difference) of the authors' best meta-learning based method using higher regularization on fine-tuning layer compared to the backbone.
                <!--Using Logistic Regression or an SVM instead of an FC layer for fine-tuning produce similar results.-->
               </p>
             </td>
@@ -168,30 +170,6 @@
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr>
             <td style="padding:20px;width:25%;vertical-align:middle">
-              <a href="images/cnn_pic.JPG"><img src="images/cnn_pic.JPG" alt="clean-usnob" style="display:block;" width="100%"></a>
-            </td>
-            <td width="75%" valign="middle">
-              <papertitle>Replicating and Improving Stacked Hourglass Networks for Human Pose Estimation</papertitle>
-              <br>
-              <strong>Chris Rockwell</strong>, Uzziel Cortez, Eric Huang.
-              <br>
-              Course project, EECS 545 Machine Learning, Fall 2018.
-              <br>
-              Instructor: Prof. Clayton Scott. 
-              <br>  
-              [<a href="data/CNN_joint_estimation.pdf">report</a>] [<a href="https://github.com/princeton-vl/pytorch_stacked_hourglass">code</a>] [<a href="http://www-personal.umich.edu/~cnris/original_8hg/checkpoint.pt">pretrained model, 8HG</a>]
-              <p> We replicate and improve upon validation accuracy from
-                  <a href="https://arxiv.org/pdf/1603.06937.pdf">
-                      <papertitle>
-                          Stacked Hourglass Networks for Human Pose Estimation
-                      </papertitle>
-                  </a>
-                  using <a href="https://arxiv.org/pdf/1412.6980.pdf">Adam</a> and larger batch size. I led implementation of the project and it was jointly useful for research. My pytorch implementation was published in the <a href="https://github.com/princeton-vl/"> princeton-vl github</a>.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
               <a href="images/AI_pic.JPG"><img src="images/AI_pic.JPG" alt="clean-usnob" style="display:block;" width="100%"></a>
             </td>
             <td width="75%" valign="middle">
@@ -210,7 +188,31 @@
                           Image Generation from Scene Graphs
                       </papertitle>
                   </a>
-                  and evaluate replicated generated images, original generated images, and ground truths using VQA.
+                  , and evaluate replicated generated images, original generated images, and ground truths using VQA.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <a href="images/cnn_pic.JPG"><img src="images/cnn_pic.JPG" alt="clean-usnob" style="display:block;" width="100%"></a>
+            </td>
+            <td width="75%" valign="middle">
+              <papertitle>Replicating and Improving Stacked Hourglass Networks for Human Pose Estimation</papertitle>
+              <br>
+              <strong>Chris Rockwell</strong>, Uzziel Cortez, Eric Huang.
+              <br>
+              Course project, EECS 545 Machine Learning, Fall 2018.
+              <br>
+              Instructor: Prof. Clayton Scott. 
+              <br>  
+              [<a href="data/CNN_joint_estimation.pdf">report</a>] [<a href="https://github.com/princeton-vl/pytorch_stacked_hourglass">code</a>] [<a href="http://www-personal.umich.edu/~cnris/original_8hg/checkpoint.pt">pretrained model, 8HG</a>]
+              <p> We replicate and improve upon validation accuracy from
+                  <a href="https://arxiv.org/pdf/1603.06937.pdf">
+                      <papertitle>
+                          Stacked Hourglass Networks for Human Pose Estimation
+                      </papertitle>
+                  </a>
+                  using <a href="https://arxiv.org/pdf/1412.6980.pdf">Adam</a> and larger batch size. I led implementation of the project and it was jointly useful for research. My pytorch implementation is published in the <a href="https://github.com/princeton-vl/pytorch_stacked_hourglass"> princeton-vl github</a>.
               </p>
             </td>
           </tr>
@@ -228,7 +230,7 @@
               Instructors: Prof. Matthew Johnson-Roberson and Prof. Ram Vasudevan
               <br>  
               [<a href="https://github.com/relh/gta_perception">code</a>]
-              <p> Squeeze and Excitation ResNet finetuned to classify objects appearing in road-scene images in the <a href="https://arxiv.org/abs/1610.01983"><papertitle>Driving in the Matrix </papertitle></a> dataset. With improved sampling and data augmentation, we finished top 10 in the class. I helped with implementation and improved data augmentation.
+              <p> We finetune a Squeeze and Excitation ResNet classify objects appearing in road-scene images in the <a href="https://arxiv.org/abs/1610.01983"><papertitle>Driving in the Matrix </papertitle></a> dataset. With improved sampling and data augmentation, we finished top 10 in the class. I helped with implementation and improved data augmentation.
               </p>
             </td>
           </tr>
@@ -247,7 +249,7 @@
               <br>  
               [<a href="data/data_mining_poster.pdf">poster</a>] [<a href="data/LP_patent.pdf">report</a>] [<a href="https://github.com/crockwell/SDNE">code</a>]
               <p> 
-              We compare several methods for link prediction on partitions of the Patent Citation Network dataset for the first time. The very sparse nature of this graph yielded low performance compared to a more typical dataset, but methods performed well in a temporal setting. I led temporal experiments and adapted representation learning method <a href="https://www.kdd.org/kdd2016/papers/files/rfp0191-wangAemb.pdf">SDNE</a> for our setting.
+              We compare several methods for link prediction on partitions of the Patent Citation Network dataset for the first time. The very sparse nature of this graph yielded low performance compared to a more typical dataset, but methods performed well in a temporal setting. I led temporal experiments and adapted representation learning method <a href="https://www.kdd.org/kdd2016/papers/files/rfp0191-wangAemb.pdf">SDNE</a> for our task.
               </p>
             </td>
           </tr>

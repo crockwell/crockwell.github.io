@@ -1,0 +1,641 @@
+<html style="--whitebusterR:255; --whitebusterG:250; --whitebusterB:250;" class="whiteBuster "><head><script async="" src="//www.google-analytics.com/analytics.js"></script><script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+    <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+    
+    <style type="text/css">
+        body {
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+            font-weight:300;
+            font-size:18px;
+            margin-left: auto;
+            margin-right: auto;
+            width: 1100px;
+        }
+        
+        h1 {
+            font-weight:300;
+        }
+        
+        .disclaimerbox {
+            background-color: #eee;		
+            border: 1px solid #eeeeee;
+            border-radius: 10px ;
+            -moz-border-radius: 10px ;
+            -webkit-border-radius: 10px ;
+            padding: 20px;
+        }
+    
+        video.header-vid {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px ;
+            -moz-border-radius: 10px ;
+            -webkit-border-radius: 10px ;
+        }
+        
+        img.header-img {
+            height: 140px;
+            border: 1px solid black;
+            border-radius: 10px ;
+            -moz-border-radius: 10px ;
+            -webkit-border-radius: 10px ;
+        }
+        
+        img.rounded {
+            border: 1px solid #eeeeee;
+            border-radius: 10px ;
+            -moz-border-radius: 10px ;
+            -webkit-border-radius: 10px ;
+        }
+        
+        a:link,a:visited
+        {
+            color: #1367a7;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #208799;
+        }
+        
+        td.dl-link {
+            height: 160px;
+            text-align: center;
+            font-size: 22px;
+        }
+        
+        .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                    0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                    5px 5px 0 0px #fff, /* The second layer */
+                    5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                    10px 10px 0 0px #fff, /* The third layer */
+                    10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                    15px 15px 0 0px #fff, /* The fourth layer */
+                    15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                    20px 20px 0 0px #fff, /* The fifth layer */
+                    20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                    25px 25px 0 0px #fff, /* The fifth layer */
+                    25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+            margin-left: 10px;
+            margin-right: 45px;
+        }
+    
+        .paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                    0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+    
+            margin-left: 10px;
+            margin-right: 45px;
+        }
+    
+    
+        .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+            box-shadow:
+                    0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                    5px 5px 0 0px #fff, /* The second layer */
+                    5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                    10px 10px 0 0px #fff, /* The third layer */
+                    10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+            margin-top: 5px;
+            margin-left: 10px;
+            margin-right: 30px;
+            margin-bottom: 5px;
+        }
+        
+        .vert-cent {
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        hr
+        {
+            border: 0;
+            height: 1px;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        }
+    </style>
+    
+    
+      
+            <title>Full-Body Awareness from Partial Observations</title>
+            <meta property="og:image" content="http://megaflop.eecs.umich.edu/~cnris/images/fig1_new.png">
+            <meta property="og:title" content="Humans ">
+      </head>
+    
+      <body>
+        <br>
+              <center>
+                  <span style="font-size:42px">Full-Body Awareness from Partial Observations</span>
+                    <table align="center" width="600px">
+                        <tbody><tr>
+                            <td align="center" width="100px">
+                              <center>
+                                  <span style="font-size:24px"><a href="https://crockwell.github.io/">Chris Rockwell</a></span>
+                                </center>
+                              </td>
+                            <td align="center" width="100px">
+                              <center>
+                                  <span style="font-size:24px"><a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a></span>
+                                </center>
+                              </td>
+                  </tr></tbody></table>
+                      <!-- <span style="font-size:30px">ECCV 2016.</span> -->
+    
+                <table align="center" width="650px">
+                        <tbody><tr>
+                            <td align="center" width="100px">
+                              <center>
+                                  <span style="font-size:24px">University of Michigan</span>
+                                </center>
+                              </td>
+                             </tr>
+                        <tr>
+                          <tbody><tr>
+                            <td align="center" width="100px">
+                              <center>
+                                  <span style="font-size:24px">ECCV, 2020</span>
+                                </center>
+                              </td>
+                             </tr>
+                        <tr>
+                  </tr></tbody></table>
+
+                    <table align="center" width="920px">
+                        <tbody><tr>
+                            <td align="center" width="230px">
+                              <center>
+                                  <span style="font-size:24px"><a href="https://github.com/crockwell/partial_humans"> [GitHub]</a></span>
+                                </center>
+                              </td>
+                            <td align="center" width="230px">
+                              <center>
+                                  <span style="font-size:24px"><a href="tbd"> [Paper]</a></span>
+                                </center>
+                              </td>
+                              <td align="center" width="230px">
+                            <center>
+                                    <span style="font-size:24px"><a href="#demo"> [Demo]</a></span> <!-- "./body/view.htm#" -->
+                                  </center>
+                                </td>
+                                <td align="center" width="230px">
+                                    <center>
+                                            <span style="font-size:24px"><a href="#annotated_test_set"> [Annotated Test Set]</a></span>
+                                          </center>
+                                        </td>
+                             </tr>
+                        <tr>
+                  </tr></tbody></table>
+              </center>
+    
+    <!--   		  <br><br>
+              <hr> -->
+    
+                <br>
+                <table align="center" width="850px">
+                    <tbody><tr>
+                        <td width="400px">
+                          <center>
+                              <a href="./images/fig1_new.png"></a><img src="./images/fig1_new.png" height="300px"></a><br>
+                        </center>
+                        </td>
+                    </tr>
+                        <tr><td align="center" width="400px"> 
+                          <center>
+                              <span style="font-size:14px"> <b>Fig. 1:</b> We present a simple but 
+                                highly effective framework for adapting human pose 
+                                estimation methods to highly truncated settings
+                                that requires no additional pose annotation.
+                                We evaluate the approach on 
+                                <a href="https://akanazawa.github.io/hmr/">HMR</a> 
+                                and 
+                                <a href="https://www.seas.upenn.edu/~nkolot/projects/cmr/">CMR</a>  
+                                by annotating four Internet video
+                                test sets:  
+                                <a href="https://web.eecs.umich.edu/~fouhey/2017/VLOG/index.html">VLOG</a>  
+                                (top-left, top-middle), 
+                                <a href="https://github.com/DmZhukov/CrossTask">Cross-Task </a> 
+                                (top-right, bottom-left), 
+                                <a href="http://youcook2.eecs.umich.edu/">YouCookII </a> 
+                                (bottom-middle), and
+                                <a href="https://www.di.ens.fr/willow/research/instructionvideos/">Instructions </a> 
+                                (bottom-right).
+                        </span></center>
+                        </td>
+    
+                </tr></tbody></table>    
+    
+                <center><h1>Abstract</h1></center><table align="center" width="850px">
+                    
+                    <tbody><tr>
+                        <td>
+    <!-- 					Given a grayscale photograph as input, this paper attacks the problem of hallucinating a <i>plausible</i> color version of the photograph. This problem is clearly underconstrained, so previous approaches have either relied on significant user interaction or resulted in desaturated colorizations. We propose a fully automatic approach that produces vibrant and realistic colorizations. We embrace the underlying uncertainty of the problem by posing it as a classification task and explore using class-rebalancing at training time to increase the diversity of colors in the result. The system is implemented as a feed-forward operation in a CNN at test time and is trained on over a million color images. We evaluate our algorithm using a "colorization Turing test", asking human subjects to choose between a generated and ground truth color image. Our method successfully fools humans 20% of the time, significantly higher than previous methods. -->
+                      </td>
+                    </tr>
+                </tbody></table>
+    
+                There has been great progress in human 3D mesh recovery
+                and great interest in learning about the world from consumer video 
+                data. Unfortunately current methods for
+                3D human mesh recovery work rather poorly on consumer video data,
+                since on the Internet, unusual camera viewpoints and aggressive truncations are
+                the norm rather than a rarity. We study this problem
+                and make a number of contributions to address it: 
+                (i) we propose a simple but highly effective self-training framework
+                that adapts human 3D mesh recovery systems to consumer videos and demonstrate
+                its application to two recent systems;
+                (ii) we introduce evaluation protocols and keypoint annotations for 13K frames across four consumer
+                video datasets for studying this task, including evaluations on out-of-image keypoints; and 
+                (iii) we show that our method substantially improves 
+                PCK and human-subject judgments compared to baselines, both on test videos from the dataset it
+                was trained on, as well as on three other datasets without further adaptation.
+    <!-- 					Given a grayscale photograph as input, this paper attacks the problem of hallucinating a <i>plausible</i> color version of the photograph. This problem is clearly underconstrained, so previous approaches have either relied on significant user interaction or resulted in desaturated colorizations. We propose a fully automatic approach that produces vibrant and realistic colorizations. We embrace the underlying uncertainty of the problem by posing it as a classification task and explore using class-rebalancing at training time to increase the diversity of colors in the result. The system is implemented as a feed-forward operation in a CNN at test time and is trained on over a million color images. We evaluate our algorithm using a "colorization Turing test", asking human subjects to choose between a generated and ground truth color image. Our method successfully fools humans 20% of the time, significantly higher than previous methods. -->
+    
+                <br><br>
+              <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+    
+
+    
+                <!-- <table align=center width=550px> -->
+                <center><h1>Paper and Supplemental Material</h1></center><table align="center" width="425px">
+                 
+                    <tbody><tr>
+                        <!--<td width=300px align=left>-->
+                        <!-- <a href="http://arxiv.org/pdf/1603.08511.pdf"> -->
+                      <td><a href="tbd"><img class="layered-paper-big" style="height:175px" src="./data/2820_preview.png"></a></td>
+                      <td><span style="font-size:14pt">Rockwell and Fouhey.<br>
+                      Full-Body Awareness from Partial Observations.<br>
+                      In ECCV 2020.<br>
+                      (arXiv coming soon!)
+                      <!-- <td><span style="font-size:14pt">Zhang, Isola, Efros. Colorful Image Colorization. In ECCV, 2016. (hosted on arXiv) -->
+                      <span style="font-size:4pt"><a href="http://arxiv.org/pdf/1603.08511.pdf"><br></a>
+    <!-- 				  <span style="font-size:14pt"><br><b>Primary revisions in v2</b>
+                      <span style="font-size:10pt"><br> &bull; ECCV 2016 Camera Ready
+                      <span style="font-size:10pt"><br> &bull; Self-supervision/representation learning experiments (see <b>Section 3.2</b>) -->
+                      <!-- <br> &bull; Loss function comparisons, with all models re-trained from scratch (see <b>Table 1</b>) -->
+                      </span>
+                      </span></td>
+                        
+                  </tr>
+                </tbody></table>
+              <br>
+    
+              <!-- <br> -->
+    <!--   		  <table align=center width=200px>
+                  <tr>
+                      <td><span style="font-size:11pt"><a href="http://arxiv.org/pdf/1603.08511v1.pdf">Previous version [v1] [10MB]</a></td>
+                      <td><span style="font-size:12pt"><a href="./resources/supp.pdf">Additional details [v1] [1MB]</a></td>
+                  </tr>
+                  <tr>
+                      <td><span style="font-size:11pt"><a href="./resources/supp.pdf">Additional details [v1] [1MB]</a></td>
+                  </tr>
+              </table> -->
+    
+              <table align="center" width="600px">
+                  <tbody><tr></br>
+                      <td><span style="font-size:14pt"><center>
+                          <a href="./data/2820.pdf">[Paper]</a>
+                          <a href="./data/2820-supp.pdf">[Supplemental]</a>
+                          <a href="https://github.com/crockwell/partial_humans/">[Code]</a>
+                          <!-- <a href="./resources/bibtex_eccv2016_colorization.txt">[Bibtex]</a> -->
+                        </center></span></td>
+                  </tr></table>
+                <table align="center" width="600px">
+                  <div>
+                  <tr><pre class="citation">
+                    @inProceedings{Rockwell2020,
+                      author = {Chris Rockwell and David F. Fouhey},
+                      title = {Full-Body Awareness from Partial Observations},
+                      booktitle = {ECCV},
+                      year = 2020
+                    } </pre></div>
+                  </tr>
+                </tbody></table>
+    
+
+                          
+    
+                <br>
+              <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+                <!-- TRY THE DEMO -->
+             <a id="demo"></a>
+             <center><h1>Try the Interactive Demo!</h1></center>
+             
+             <script type='text/javascript' src='body/popmanage.js'></script>
+             <script type='text/javascript' src='body/dataInfo.js'></script>
+             What do 100 representative images look like in Internet video?<br/>Here is an interactive tool for exploring what typical humans look like in four Internet Video datasets<br/><br/><br/><br/>Each cell is an image from a representative 100 image sample. We have grouped the poses into five categories: <br/>
+             <span id='key0' style='padding:1px;font-size:100%'></span> <span id='key1' style='padding:1px;font-size:100%'></span> <span id='key2' style='padding:1px;font-size:100%'></span> <span id='key3' style='padding:1px;font-size:100%'></span> <span id='key4' style='padding:1px;font-size:100%'></span> 
+             <br><br/>You see poses from four datasets: <br/><br/><span style='margin:1px;padding:1px; background-color:#ddd;border:2px solid black;display:inline;font-size:100%' onClick='resetPop(0)' id='dataPick0'><a href='#demo'>VLOG</a></span>
+             <span style='margin:1px;padding:1px; background-color:#ddd;border:2px solid black;display:inline;font-size:100%' onClick='resetPop(1)' id='dataPick1'><a href='#demo'>Cross Task</a></span>
+             <span style='margin:1px;padding:1px; background-color:#ddd;border:2px solid black;display:inline;font-size:100%' onClick='resetPop(2)' id='dataPick2'><a href='#demo'>Instructions</a></span>
+             <span style='margin:1px;padding:1px; background-color:#ddd;border:2px solid black;display:inline;font-size:100%' onClick='resetPop(3)' id='dataPick3'><a href='#demo'>YouCookII</a></span>
+             <br/><br/><table id='popBox' style='border-collapse:collapse;padding:0px;spacing:0px;margin:0px;'><tr><td colspan=10 align='center' style='font-size:110%' id='popDescr'>100 Images</td></tr><tr>
+             <td onmouseover='popTileIn(0)' onmouseout='popTileOut(0)' id='popTile0' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(1)' onmouseout='popTileOut(1)' id='popTile1' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(2)' onmouseout='popTileOut(2)' id='popTile2' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(3)' onmouseout='popTileOut(3)' id='popTile3' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(4)' onmouseout='popTileOut(4)' id='popTile4' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(5)' onmouseout='popTileOut(5)' id='popTile5' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(6)' onmouseout='popTileOut(6)' id='popTile6' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(7)' onmouseout='popTileOut(7)' id='popTile7' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(8)' onmouseout='popTileOut(8)' id='popTile8' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(9)' onmouseout='popTileOut(9)' id='popTile9' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td rowspan=10 style='vertical-align:top;'><img height='300' id='visImg' style='border:2px solid black;'></td></tr>
+             <tr>
+             <td onmouseover='popTileIn(10)' onmouseout='popTileOut(10)' id='popTile10' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(11)' onmouseout='popTileOut(11)' id='popTile11' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(12)' onmouseout='popTileOut(12)' id='popTile12' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(13)' onmouseout='popTileOut(13)' id='popTile13' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(14)' onmouseout='popTileOut(14)' id='popTile14' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(15)' onmouseout='popTileOut(15)' id='popTile15' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(16)' onmouseout='popTileOut(16)' id='popTile16' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(17)' onmouseout='popTileOut(17)' id='popTile17' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(18)' onmouseout='popTileOut(18)' id='popTile18' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(19)' onmouseout='popTileOut(19)' id='popTile19' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             </tr>
+             <tr>
+             <td onmouseover='popTileIn(20)' onmouseout='popTileOut(20)' id='popTile20' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(21)' onmouseout='popTileOut(21)' id='popTile21' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(22)' onmouseout='popTileOut(22)' id='popTile22' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(23)' onmouseout='popTileOut(23)' id='popTile23' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(24)' onmouseout='popTileOut(24)' id='popTile24' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(25)' onmouseout='popTileOut(25)' id='popTile25' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(26)' onmouseout='popTileOut(26)' id='popTile26' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(27)' onmouseout='popTileOut(27)' id='popTile27' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(28)' onmouseout='popTileOut(28)' id='popTile28' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(29)' onmouseout='popTileOut(29)' id='popTile29' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             </tr>
+             <tr>
+             <td onmouseover='popTileIn(30)' onmouseout='popTileOut(30)' id='popTile30' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(31)' onmouseout='popTileOut(31)' id='popTile31' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(32)' onmouseout='popTileOut(32)' id='popTile32' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(33)' onmouseout='popTileOut(33)' id='popTile33' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(34)' onmouseout='popTileOut(34)' id='popTile34' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(35)' onmouseout='popTileOut(35)' id='popTile35' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(36)' onmouseout='popTileOut(36)' id='popTile36' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(37)' onmouseout='popTileOut(37)' id='popTile37' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(38)' onmouseout='popTileOut(38)' id='popTile38' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(39)' onmouseout='popTileOut(39)' id='popTile39' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             </tr>
+             <tr>
+             <td onmouseover='popTileIn(40)' onmouseout='popTileOut(40)' id='popTile40' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(41)' onmouseout='popTileOut(41)' id='popTile41' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(42)' onmouseout='popTileOut(42)' id='popTile42' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(43)' onmouseout='popTileOut(43)' id='popTile43' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(44)' onmouseout='popTileOut(44)' id='popTile44' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(45)' onmouseout='popTileOut(45)' id='popTile45' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(46)' onmouseout='popTileOut(46)' id='popTile46' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(47)' onmouseout='popTileOut(47)' id='popTile47' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(48)' onmouseout='popTileOut(48)' id='popTile48' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(49)' onmouseout='popTileOut(49)' id='popTile49' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             </tr>
+             <tr>
+             <td onmouseover='popTileIn(50)' onmouseout='popTileOut(50)' id='popTile50' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(51)' onmouseout='popTileOut(51)' id='popTile51' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(52)' onmouseout='popTileOut(52)' id='popTile52' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(53)' onmouseout='popTileOut(53)' id='popTile53' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(54)' onmouseout='popTileOut(54)' id='popTile54' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(55)' onmouseout='popTileOut(55)' id='popTile55' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(56)' onmouseout='popTileOut(56)' id='popTile56' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(57)' onmouseout='popTileOut(57)' id='popTile57' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(58)' onmouseout='popTileOut(58)' id='popTile58' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(59)' onmouseout='popTileOut(59)' id='popTile59' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             </tr>
+             <tr>
+             <td onmouseover='popTileIn(60)' onmouseout='popTileOut(60)' id='popTile60' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(61)' onmouseout='popTileOut(61)' id='popTile61' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(62)' onmouseout='popTileOut(62)' id='popTile62' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(63)' onmouseout='popTileOut(63)' id='popTile63' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(64)' onmouseout='popTileOut(64)' id='popTile64' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(65)' onmouseout='popTileOut(65)' id='popTile65' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(66)' onmouseout='popTileOut(66)' id='popTile66' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(67)' onmouseout='popTileOut(67)' id='popTile67' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(68)' onmouseout='popTileOut(68)' id='popTile68' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(69)' onmouseout='popTileOut(69)' id='popTile69' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             </tr>
+             <tr>
+             <td onmouseover='popTileIn(70)' onmouseout='popTileOut(70)' id='popTile70' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(71)' onmouseout='popTileOut(71)' id='popTile71' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(72)' onmouseout='popTileOut(72)' id='popTile72' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(73)' onmouseout='popTileOut(73)' id='popTile73' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(74)' onmouseout='popTileOut(74)' id='popTile74' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(75)' onmouseout='popTileOut(75)' id='popTile75' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(76)' onmouseout='popTileOut(76)' id='popTile76' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(77)' onmouseout='popTileOut(77)' id='popTile77' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(78)' onmouseout='popTileOut(78)' id='popTile78' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(79)' onmouseout='popTileOut(79)' id='popTile79' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             </tr>
+             <tr>
+             <td onmouseover='popTileIn(80)' onmouseout='popTileOut(80)' id='popTile80' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(81)' onmouseout='popTileOut(81)' id='popTile81' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(82)' onmouseout='popTileOut(82)' id='popTile82' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(83)' onmouseout='popTileOut(83)' id='popTile83' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(84)' onmouseout='popTileOut(84)' id='popTile84' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(85)' onmouseout='popTileOut(85)' id='popTile85' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(86)' onmouseout='popTileOut(86)' id='popTile86' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(87)' onmouseout='popTileOut(87)' id='popTile87' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(88)' onmouseout='popTileOut(88)' id='popTile88' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(89)' onmouseout='popTileOut(89)' id='popTile89' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             </tr>
+             <tr>
+             <td onmouseover='popTileIn(90)' onmouseout='popTileOut(90)' id='popTile90' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(91)' onmouseout='popTileOut(91)' id='popTile91' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(92)' onmouseout='popTileOut(92)' id='popTile92' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(93)' onmouseout='popTileOut(93)' id='popTile93' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(94)' onmouseout='popTileOut(94)' id='popTile94' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(95)' onmouseout='popTileOut(95)' id='popTile95' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(96)' onmouseout='popTileOut(96)' id='popTile96' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(97)' onmouseout='popTileOut(97)' id='popTile97' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(98)' onmouseout='popTileOut(98)' id='popTile98' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             <td onmouseover='popTileIn(99)' onmouseout='popTileOut(99)' id='popTile99' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+             </tr>
+             </table>
+             <script>resetPop(0);</script>
+
+              <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+    
+                <a name="bw_legacy"></a>
+                <center><h1>Video Results</h1></center>
+                We show results of our HMR model on videos across datasets, and show some common failure cases. 
+                Model outputs are used as-is, with SMPL parameters smoothed across frames.<br>
+    
+                <!-- along with miscellaneous photos. -->
+                <br>
+                <table align="center" width="1100px">
+                    <tbody><tr>
+                        <td width="600px">
+                          <center>
+                            <video width="600" height="340" controls>
+                              <source src="./data/humans_vid.mp4" type="video/mp4">
+                            </video>
+                        </td>
+    
+                    </tr>
+                </tbody></table>
+
+                <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+
+                <a name="bw_legacy"></a>
+                <center><h1>ECCV Talk</h1></center>
+    
+                
+                <table align="center" width="1100px">
+                    <tbody><tr>
+                        <td width="600px">
+                          <center>
+                            <video width="600" height="340" controls>
+                              <source src="./data/humans_full.mp4" type="video/mp4">
+                            </video>
+                        </td>
+    
+                    </tr>
+                </tbody></table>
+
+                <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+                <a name="bw_legacy"></a>
+                <center><h1>ECCV Short Overview</h1></center>
+                
+                <table align="center" width="1100px">
+                    <tbody><tr>
+                        <td width="600px">
+                          <center>
+                            <video width="600" height="340" controls>
+                              <source src="./data/humans_summary.mp4" type="video/mp4">
+                            </video>
+                        </td>
+    
+                    </tr>
+                </tbody></table>
+
+              <br><br>  
+                <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+    
+                <a name="perform_comp"></a>
+                <center><h1>Annotated Test Set</h1></center>
+                <a id="annotated_test_set"> </a>
+                Frames we annotate for testing are from four internet video datasets collected in prior work: 
+                <a href="https://web.eecs.umich.edu/~fouhey/2017/VLOG/index.html">VLOG</a>, 
+                <a href="https://github.com/DmZhukov/CrossTask">Cross-Task</a>,
+                <a href="http://youcook2.eecs.umich.edu/">YouCookII</a>, and 
+                <a href="https://www.di.ens.fr/willow/research/instructionvideos/">Instructions</a>. 
+                We do not hold the copyright to these videos, but for ease of replication, we are making available
+                our local copy of the data for non-commercial research purposes only. Click here to download
+                our copies of 
+                <a href="http://megaflop.eecs.umich.edu:8888/~cnris/partial_humans_website/crockwell.github.io/annotated_test_set/vlog/agree.html">VLOG</a>,  
+                <a href="http://megaflop.eecs.umich.edu:8888/~cnris/partial_humans_website/crockwell.github.io/annotated_test_set/cross_task/agree.html">Cross-Task</a>, 
+                <a href="http://megaflop.eecs.umich.edu:8888/~cnris/partial_humans_website/crockwell.github.io/annotated_test_set/instructions/agree.html">Instructions</a>.
+                Fill out this <a href="https://docs.google.com/forms/d/e/1FAIpQLScfuMCvHvsFRuW0pdYeS0APYm4VOakjo1IF9LJmwdiaiNmiTw/viewform">Google Form</a> 
+                so we can share the download of YouCookII. 
+                If you find the annotations helpful, please additionally cite the original works.
+              <br><br>  
+                <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+                  
+    
+                
+                    <center><h1>Recent & Concurrent Work</h1></center>
+    
+                    There has been a variety of exciting recent and concurrent work on in-the-wild 3D human mesh estimation.
+                    In addition to 
+                    <a href="https://akanazawa.github.io/hmr/">HMR</a> 
+                    and 
+                    <a href="https://www.seas.upenn.edu/~nkolot/projects/cmr/">CMR</a>,
+                    here is a partial list: 
+
+                    <ul>
+                        <li>
+                          Donglai Xiang, Hanbyul Joo, Yaser Sheikh. <b> Monocular total capture: Posing face, body, and hands in the wild
+                              </b> <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Xiang_Monocular_Total_Capture_Posing_Face_Body_and_Hands_in_the_CVPR_2019_paper.pdf">[PDF]</a>
+                        </li>
+                        <li>
+                          Nikos Kolotouros, Georgios Pavlakos, Michael J. Black, and Kostas Daniilidis. <b> Learning to Reconstruct 3D Human Pose and Shape
+                            via Model-fitting in the Loop
+                              </b> <a href="https://openaccess.thecvf.com/content_CVPR_2019/papers/Xiang_Monocular_Total_Capture_Posing_Face_Body_and_Hands_in_the_CVPR_2019_paper.pdf">[PDF]</a>
+                        </li>
+                        <li>
+                          Hanbyul Joo, Natalia Neverova, and Andrea Vedaldi. <b> Exemplar Fine-Tuning for 3D Human Pose Fitting
+                                Towards In-the-Wild 3D Human Pose Estimation
+                                 </b> <a href="https://arxiv.org/pdf/2004.03686.pdf">[PDF]</a>
+                        </li>
+                        <li>
+                          Wen Jiang, Nikos Kolotouros, Georgios Pavlakos, Xiaowei Zhou, and Kostas Daniilidis.
+ <b> Coherent Reconstruction of Multiple Humans From a Single Image.
+                               </b> <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Jiang_Coherent_Reconstruction_of_Multiple_Humans_From_a_Single_Image_CVPR_2020_paper.pdf">[PDF]</a>
+                      </li>
+                      <li>
+                        Jason Y. Zhang, Sam Pepose, Hanbyul Joo, Deva Ramanan, Jitendra Malik, and Angjoo Kanazawa. <b> Perceiving 3D Human-Object Spatial
+                          Arrangements from a Single Image in the Wild.
+                             </b> <a href="https://arxiv.org/pdf/2007.15649.pdf">[PDF]</a>
+                    </li>
+                    </ul>
+
+
+
+                    In addition to <a href="https://github.com/anibali/h36m-fetch">Human 3.6M</a>, the <a href="https://virtualhumans.mpi-inf.mpg.de/3DPW/">3D Poses In the Wild Dataset</a> has been adopted for evaluation.
+
+                    We see our method and annotated test set as complimentary to other recent works. 
+                    Beyond
+                    <a href="https://akanazawa.github.io/hmr/">HMR</a> 
+                    and 
+                    <a href="https://www.seas.upenn.edu/~nkolot/projects/cmr/">CMR</a>, 
+                    we would be excited to see other models (including optimization)
+                    adapted to and evaluated upon the extreme truncation of our setting.
+    
+                    <br><br>
+    
+                    <!-- <br><br> -->
+                           </left>
+                    </td>
+                 
+             </tbody></table>
+    
+              <br>
+              <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+                  
+                
+                    <center><h1>Acknowledgements</h1></center>
+                    Special thanks to 
+                    <a href="https://www.di.ens.fr/dimitri.zhukov/">Dimitri Zhukov</a>,
+                    <a href="https://www.jbalayrac.com/">Jean-baptiste Alayrac</a>,
+                    and <a href="https://luoweizhou.github.io/">Luowei Zhou</a>,
+                    for allowing us to share 
+                    privately frames from their respective datasets: 
+                    <a href="https://github.com/DmZhukov/CrossTask">Cross-Task</a>, 
+                    <a href="https://www.di.ens.fr/willow/research/instructionvideos/">Instructions</a>, 
+                    and <a href="http://youcook2.eecs.umich.edu/">YouCookII</a>.
+
+                    Thanks to 
+                    <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a>
+                    and <a href="https://www.seas.upenn.edu/~nkolot/">Nikos Kolotouros</a>
+                    for polished model repositories to easily extend
+                    their respective
+                    <a href="https://github.com/akanazawa/hmr">HMR</a>
+                    and 
+                    <a href="https://github.com/nkolot/GraphCMR/">CMR</a> 
+                    models.
+
+                    Thanks to the members of <a href="http://fouheylab.eecs.umich.edu/people.html">Fouhey AI Lab </a> and Karan Desai for 
+                    all of the great suggestions! The webpage template originally came from some <a href="https://richzhang.github.io/colorization/">colorful folks</a>.
+
+                </left>
+            </td>
+                 </tr>
+            </tbody></table>
+    
+            <br><br>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-75863369-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+                  
+    
+    
+     
+    </body></html>

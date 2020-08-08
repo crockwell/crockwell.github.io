@@ -1,0 +1,129 @@
+<script type='text/javascript' src='popmanage.js'></script>
+<script type='text/javascript' src='dataInfo.js'></script>
+What do 100 representative images look like in Internet video?<br/>Here is an interactive tool for exploring what typical humans look like in four Internet Video datasets<br/><br/><br/><br/>Each cell is an image from a representative 100 image sample. We have grouped the poses into five categories: <br/>
+<span id='key0' style='padding:1px;font-size:100%'></span> <span id='key1' style='padding:1px;font-size:100%'></span> <span id='key2' style='padding:1px;font-size:100%'></span> <span id='key3' style='padding:1px;font-size:100%'></span> <span id='key4' style='padding:1px;font-size:100%'></span> <br><br/>You see poses from four datasets: <br/><br/><span style='margin:1px;padding:1px; background-color:#ddd;border:2px solid black;display:inline;font-size:100%' onClick='resetPop(0)' id='dataPick0'><a href='#'>VLOG</a></span>
+<span style='margin:1px;padding:1px; background-color:#ddd;border:2px solid black;display:inline;font-size:100%' onClick='resetPop(1)' id='dataPick1'><a href='#'>Cross Task</a></span>
+<span style='margin:1px;padding:1px; background-color:#ddd;border:2px solid black;display:inline;font-size:100%' onClick='resetPop(2)' id='dataPick2'><a href='#'>Instructions</a></span>
+<span style='margin:1px;padding:1px; background-color:#ddd;border:2px solid black;display:inline;font-size:100%' onClick='resetPop(3)' id='dataPick3'><a href='#'>YouCookII</a></span>
+<br/><br/><table id='popBox' style='border-collapse:collapse;padding:0px;spacing:0px;margin:0px;'><tr><td colspan=10 align='center' style='font-size:110%' id='popDescr'>100 Images</td></tr><tr>
+<td onmouseover='popTileIn(0)' onmouseout='popTileOut(0)' id='popTile0' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(1)' onmouseout='popTileOut(1)' id='popTile1' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(2)' onmouseout='popTileOut(2)' id='popTile2' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(3)' onmouseout='popTileOut(3)' id='popTile3' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(4)' onmouseout='popTileOut(4)' id='popTile4' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(5)' onmouseout='popTileOut(5)' id='popTile5' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(6)' onmouseout='popTileOut(6)' id='popTile6' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(7)' onmouseout='popTileOut(7)' id='popTile7' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(8)' onmouseout='popTileOut(8)' id='popTile8' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(9)' onmouseout='popTileOut(9)' id='popTile9' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td rowspan=10 style='vertical-align:top;'><img height='300' id='visImg' style='border:2px solid black;'></td></tr>
+<tr>
+<td onmouseover='popTileIn(10)' onmouseout='popTileOut(10)' id='popTile10' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(11)' onmouseout='popTileOut(11)' id='popTile11' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(12)' onmouseout='popTileOut(12)' id='popTile12' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(13)' onmouseout='popTileOut(13)' id='popTile13' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(14)' onmouseout='popTileOut(14)' id='popTile14' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(15)' onmouseout='popTileOut(15)' id='popTile15' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(16)' onmouseout='popTileOut(16)' id='popTile16' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(17)' onmouseout='popTileOut(17)' id='popTile17' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(18)' onmouseout='popTileOut(18)' id='popTile18' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(19)' onmouseout='popTileOut(19)' id='popTile19' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+</tr>
+<tr>
+<td onmouseover='popTileIn(20)' onmouseout='popTileOut(20)' id='popTile20' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(21)' onmouseout='popTileOut(21)' id='popTile21' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(22)' onmouseout='popTileOut(22)' id='popTile22' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(23)' onmouseout='popTileOut(23)' id='popTile23' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(24)' onmouseout='popTileOut(24)' id='popTile24' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(25)' onmouseout='popTileOut(25)' id='popTile25' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(26)' onmouseout='popTileOut(26)' id='popTile26' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(27)' onmouseout='popTileOut(27)' id='popTile27' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(28)' onmouseout='popTileOut(28)' id='popTile28' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(29)' onmouseout='popTileOut(29)' id='popTile29' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+</tr>
+<tr>
+<td onmouseover='popTileIn(30)' onmouseout='popTileOut(30)' id='popTile30' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(31)' onmouseout='popTileOut(31)' id='popTile31' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(32)' onmouseout='popTileOut(32)' id='popTile32' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(33)' onmouseout='popTileOut(33)' id='popTile33' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(34)' onmouseout='popTileOut(34)' id='popTile34' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(35)' onmouseout='popTileOut(35)' id='popTile35' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(36)' onmouseout='popTileOut(36)' id='popTile36' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(37)' onmouseout='popTileOut(37)' id='popTile37' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(38)' onmouseout='popTileOut(38)' id='popTile38' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(39)' onmouseout='popTileOut(39)' id='popTile39' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+</tr>
+<tr>
+<td onmouseover='popTileIn(40)' onmouseout='popTileOut(40)' id='popTile40' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(41)' onmouseout='popTileOut(41)' id='popTile41' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(42)' onmouseout='popTileOut(42)' id='popTile42' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(43)' onmouseout='popTileOut(43)' id='popTile43' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(44)' onmouseout='popTileOut(44)' id='popTile44' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(45)' onmouseout='popTileOut(45)' id='popTile45' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(46)' onmouseout='popTileOut(46)' id='popTile46' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(47)' onmouseout='popTileOut(47)' id='popTile47' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(48)' onmouseout='popTileOut(48)' id='popTile48' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(49)' onmouseout='popTileOut(49)' id='popTile49' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+</tr>
+<tr>
+<td onmouseover='popTileIn(50)' onmouseout='popTileOut(50)' id='popTile50' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(51)' onmouseout='popTileOut(51)' id='popTile51' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(52)' onmouseout='popTileOut(52)' id='popTile52' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(53)' onmouseout='popTileOut(53)' id='popTile53' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(54)' onmouseout='popTileOut(54)' id='popTile54' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(55)' onmouseout='popTileOut(55)' id='popTile55' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(56)' onmouseout='popTileOut(56)' id='popTile56' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(57)' onmouseout='popTileOut(57)' id='popTile57' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(58)' onmouseout='popTileOut(58)' id='popTile58' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(59)' onmouseout='popTileOut(59)' id='popTile59' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+</tr>
+<tr>
+<td onmouseover='popTileIn(60)' onmouseout='popTileOut(60)' id='popTile60' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(61)' onmouseout='popTileOut(61)' id='popTile61' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(62)' onmouseout='popTileOut(62)' id='popTile62' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(63)' onmouseout='popTileOut(63)' id='popTile63' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(64)' onmouseout='popTileOut(64)' id='popTile64' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(65)' onmouseout='popTileOut(65)' id='popTile65' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(66)' onmouseout='popTileOut(66)' id='popTile66' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(67)' onmouseout='popTileOut(67)' id='popTile67' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(68)' onmouseout='popTileOut(68)' id='popTile68' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(69)' onmouseout='popTileOut(69)' id='popTile69' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+</tr>
+<tr>
+<td onmouseover='popTileIn(70)' onmouseout='popTileOut(70)' id='popTile70' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(71)' onmouseout='popTileOut(71)' id='popTile71' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(72)' onmouseout='popTileOut(72)' id='popTile72' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(73)' onmouseout='popTileOut(73)' id='popTile73' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(74)' onmouseout='popTileOut(74)' id='popTile74' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(75)' onmouseout='popTileOut(75)' id='popTile75' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(76)' onmouseout='popTileOut(76)' id='popTile76' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(77)' onmouseout='popTileOut(77)' id='popTile77' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(78)' onmouseout='popTileOut(78)' id='popTile78' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(79)' onmouseout='popTileOut(79)' id='popTile79' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+</tr>
+<tr>
+<td onmouseover='popTileIn(80)' onmouseout='popTileOut(80)' id='popTile80' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(81)' onmouseout='popTileOut(81)' id='popTile81' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(82)' onmouseout='popTileOut(82)' id='popTile82' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(83)' onmouseout='popTileOut(83)' id='popTile83' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(84)' onmouseout='popTileOut(84)' id='popTile84' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(85)' onmouseout='popTileOut(85)' id='popTile85' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(86)' onmouseout='popTileOut(86)' id='popTile86' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(87)' onmouseout='popTileOut(87)' id='popTile87' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(88)' onmouseout='popTileOut(88)' id='popTile88' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(89)' onmouseout='popTileOut(89)' id='popTile89' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+</tr>
+<tr>
+<td onmouseover='popTileIn(90)' onmouseout='popTileOut(90)' id='popTile90' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(91)' onmouseout='popTileOut(91)' id='popTile91' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(92)' onmouseout='popTileOut(92)' id='popTile92' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(93)' onmouseout='popTileOut(93)' id='popTile93' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(94)' onmouseout='popTileOut(94)' id='popTile94' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(95)' onmouseout='popTileOut(95)' id='popTile95' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(96)' onmouseout='popTileOut(96)' id='popTile96' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(97)' onmouseout='popTileOut(97)' id='popTile97' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(98)' onmouseout='popTileOut(98)' id='popTile98' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+<td onmouseover='popTileIn(99)' onmouseout='popTileOut(99)' id='popTile99' style='border:2px solid black;'>&nbsp; &nbsp; &nbsp;</td>
+</tr>
+</table>
+<script>resetPop(0);</script>

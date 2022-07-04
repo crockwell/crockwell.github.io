@@ -128,14 +128,14 @@
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>PixelSynth: Generating a 3D-Consistent Experience from a Single Image</title>
+    <title>The 8-Point Algorithm as an Inductive Bias for Relative Pose Prediction by ViTs</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
   </head>
   <body>
     <br>
     <center>
-      <span style="font-size:46px">PixelSynth: Generating a 3D-Consistent Experience from a Single Image</span>
+      <span style="font-size:46px">The 8-Point Algorithm as an Inductive Bias for Relative Pose Prediction by ViTs</span>
       <table align="center" width="600px">
         <tbody>
           <tr>
@@ -143,10 +143,10 @@
               <center><span style="font-size:27px"><a href="https://crockwell.github.io/">Chris Rockwell</a></span></center>
             </td>
             <td align="center" width="100px">
-              <center><span style="font-size:27px"><a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a></span></center>
+              <center><span style="font-size:27px"><a href="https://web.eecs.umich.edu/~justincj/">Justin Johnson</a></span></center>
             </td>
             <td align="center" width="100px">
-              <center><span style="font-size:27px"><a href="https://web.eecs.umich.edu/~justincj/">Justin Johnson</a></span></center>
+              <center><span style="font-size:27px"><a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a></span></center>
             </td>
           </tr>
         </tbody>
@@ -162,7 +162,7 @@
           <tbody>
             <tr>
               <td align="center" width="100px">
-                <center><span style="font-size:27px">ICCV 2021</span></center>
+                <center><span style="font-size:27px">3DV 2022</span></center>
               </td>
             </tr>
         </tbody>
@@ -171,13 +171,10 @@
         <tbody>
           <tr>
             <td align="center" width="230px">
-              <center><span style="font-size:27px"><a href="https://github.com/crockwell/pixelsynth"> [GitHub]</a></span></center>
+              <center><span style="font-size:27px"><a href="https://github.com/crockwell/rel_pose"> [GitHub]</a></span></center>
             </td>
             <td align="center" width="230px">
-              <center><span style="font-size:27px"><a href="https://arxiv.org/abs/2108.05892"> [Paper]</a></span></center>
-            </td>
-            <td align="center" width="230px">
-              <center><span style="font-size:27px"><a href="#demo"> [Demo]</a></span></center>
+              <center><span style="font-size:27px"><a href=""> [Paper]</a></span></center>
             </td>
           </tr>
           <tr></tr>
@@ -187,86 +184,15 @@
     <br>
     <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
     <br>
-    <a name="demo"></a>
-    <center><h1>Interactive Demo</h1></center>
-    <br>
-    <div class='container'>
-      <div class='row'>
-        <!-- TODO: make input somewhere else? Make images smaller? 
-          tricky: https://stackoverflow.com/questions/18679414/how-put-percentage-width-into-html-canvas-no-css
-        -->
-        <div class='col-sm text-center'> 
-          <h3>Input</h3>
-          <canvas id='input-canvas' height="256" width="256"></canvas>
-        </div>
-        <div class='col-sm text-center'>
-          <h3>PixelSynth</h3>
-          <canvas id='pixelsynth-canvas' height="256" width="256"></canvas>
-        </div>
-        <div class='col-sm text-center'>
-          <h3>SynSin (6x)</h3>
-          <canvas id='synsin6x-canvas' height="256" width="256"></canvas>
-        </div>
-        <div class='col-sm text-center'>
-          <h3>No 3D Accum.</h3>
-          <canvas id='naive-canvas' height="256" width="256"></canvas>
-        </div>
-      </div>
-      <div class='row mt-4'>
-        <div class='col-sm text-center'>
-          <div class='btn-group btn-group-toggle' id='movement-btn-group' data-toggle="buttons">
-            <input type="radio" class="btn-check" name="movement-btn-radio" id="movement-btn-translate">
-            <label class="btn btn-outline-primary" for="movement-btn-translate">Translate</label>
-
-            <input type="radio" class="btn-check" name="movement-btn-radio" id="movement-btn-rotate">
-            <label class="btn btn-outline-primary" for="movement-btn-rotate">Rotate</label>
-          </div>
-          <div class='btn-group' id='reset-btn-group'>
-          </div>
-        </div>
-        <div class='col-sm text-center'>
-          <div class='btn-group btn-group-toggle' id='scene-btn-group' data-toggle='buttons'>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class='section'>
-      <div class='row mt-4'>
-        <div class='col-sm-8'>
-          <b>Demo Instructions.</b> <br>
-          View in widescreen or zoom out until all images fit on one line. <br>
-          Look around by clicking and dragging on an image above or using [W,A,S,D] keys. <br>
-          Use the buttons above or the shift key to toggle between translation and rotation. <br>
-          Click "Granular Scene Movement" to load more images for smoother movement. <br>
-          This probably won't work on Internet Explorer or on mobile.
-        </div>
-        <div class='col-sm-4 text-center'>
-          <div class='btn-group-vertical btn-group-toggle' id='granularity-btn-group' data-toggle="buttons">
-            <input type="radio" class="btn-check" name="granularity-btn-radio" id="granularity-btn-light">
-            <label class="btn btn-outline-primary" for="granularity-btn-Fast Scene Loading">Fast Scene Loading</label>
-    
-            <input type="radio" class="btn-check" name="granularity-btn-radio" id="granularity-btn-heavy">
-            <label class="btn btn-outline-primary" for="granularity-btn-Granular Scene Movement">Granular Scene Movement</label>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="./main.js"></script>
-    <hr>
     <div class='section'>
       <center><h1>Abstract</h1></center><br>
-        Recent advancements in differentiable rendering and 3D reasoning have driven exciting results
-        in novel view synthesis from a single image. Despite realistic results, methods are limited
-        to relatively small view change. In order to synthesize immersive scenes, models must also
-        be able to extrapolate. We present an approach that fuses 3D reasoning with autoregressive
-        modeling to outpaint large view changes in a 3D-consistent manner, enabling scene synthesis.
-        We demonstrate considerable improvement in single image large-angle view synthesis results
-        compared to a variety of methods and possible variants across simulated and real datasets.
-        In addition, we show increased 3D consistency compared to alternative accumulation methods.
+      We present a simple baseline for directly estimating the
+      relative pose (rotation and translation, including scale) between two images. Deep methods have recently shown
+      strong progress but often require complex or multi-stage architectures. We show that a handful of modifications can be
+      applied to a Vision Transformer (ViT) to bring its computations close to the Eight-Point Algorithm. This inductive
+      bias enables a simple method to be competitive in multiple
+      settings, often substantially improving over the state of the
+      art with strong performance gains in limited data regimes
     </div>
     <hr>
     <div class='subsection'>
@@ -274,12 +200,12 @@
       <div class='row'>
         <div class='col-sm-2'></div>
         <div class='col-sm-4 text-center'> 
-          <a href="tbd"><img class="layered-paper-big" style="height:175px" src="./data/pixelsynth_preview.png"></a>
+          <a href=""><img class="layered-paper-big" style="height:175px" src="./data/rel_pose_preview.png"></a>
         </div>
         <div class='col-sm-4'>
-          Rockwell, Fouhey and Johnson. <br>
-          PixelSynth: Generating a 3D-Consistent Experience from a Single Image. <br>
-          In ICCV 2021. (Hosted on <a href="https://arxiv.org/abs/2108.05892">arXiv</a>)
+          Rockwell, Johnson and Fouhey. <br>
+          The 8-Point Algorithm as an Inductive Bias for Relative Pose Prediction by ViTs. <br>
+          In 3DV 2022. (Hosted on <a href="">arXiv</a>)
         </div>
       </div>
     </div>
@@ -288,17 +214,17 @@
     <div class='mini-section'>
       <a href="./data/paper.pdf">[Paper]</a>
       <a href="./data/supp.pdf">[Supplemental]</a>
-      <a href="https://github.com/crockwell/pixelsynth/">[Code]</a>
+      <a href="https://github.com/crockwell/rel_pose/">[Code]</a>
     </div>
     <table align="center" width="600px">
       <div>
         <tr>
           <pre class="citation">
-            @inProceedings{Rockwell2021,
-              author = {Chris Rockwell and David F. Fouhey and Justin Johnson},
-              title = {PixelSynth: Generating a 3D-Consistent Experience from a Single Image},
-              booktitle = {ICCV},
-              year = 2021
+            @inProceedings{Rockwell2022,
+              author = {Chris Rockwell and Justin Johnson and David F. Fouhey},
+              title = {The 8-Point Algorithm as an Inductive Bias for Relative Pose Prediction by ViTs},
+              booktitle = {3DV},
+              year = 2022
             }
           </pre>
         </tr> 
@@ -306,74 +232,17 @@
     </table>
     <hr>
     <div class='section'>
-      <a id="video_results"></a>
-      <center><h1>Video Results</h1></center><br>
-      We display rendered scenes from PixelSynth and baselines on RealEstate10K and Matterport.
-      <br>
-      <br>
-      <video width="600" height="340" controls>
-        <source src="./data/video_results.mp4">
-      </video>
-    </div>
-    <hr>
-    <div class='section'>
-      <center><h1>Recent & Concurrent Work</h1></center><br>
-      There has been a variety of exciting recent and concurrent work on single-image novel view synthesis.
-      In addition to <a href="https://www.robots.ox.ac.uk/~ow/synsin.html">SynSin</a>, here is a partial list: 
-      <ul>
-        <li>
-          Jing Yu Koh, Honglak Lee, Yinfei Yang, Jason Baldridge and Peter Anderson.
-          <b> Pathdreamer: A World Model for Indoor Navigation</b>
-          <a href="https://arxiv.org/pdf/2105.08756.pdf">[PDF]</a>
-        </li>
-        <li>
-          Robin Rombach*, Patrick Esser* and Bjorn Ommer.
-          <b> Geometry-Free View Synthesis: Transformers and no 3D Priors</b>
-          <a href="https://arxiv.org/pdf/2104.07652.pdf">[PDF]</a>
-        </li>
-        <li>
-          Ronghang Hu, Nikhila Ravi, Alex Berg and Deepak Pathak.
-          <b> Worldsheet: Wrapping the World in a 3D Sheet for View Synthesis from a Single Image</b>
-          <a href="https://worldsheet.github.io/resources/worldsheet.pdf">[PDF]</a>
-        </li>
-        <li>
-          Andrew Liu*, Richard Tucker*, Varun Jampani, Ameesh Makadia, Noah Snavely and Angjoo Kanazawa.
-          <b> Infinite Nature: Perpetual View Generation of Natural Scenes from a Single Image</b>
-          <a href="https://arxiv.org/pdf/2012.09855.pdf">[PDF]</a>
-        </li>
-        <li>
-          Meng-Li Shih, Shih-Yang Su, Johannes Kopf and Jia-Bin Huang.
-          <b> 3D Photography using Context-aware Layered Depth Inpainting</b>
-          <a href="https://drive.google.com/file/d/17ki_YAL1k5CaHHP3pIBFWvw-ztF4CCPP/view">[PDF]</a>
-        </li>
-        <li>
-          Richard Tucker and Noah Snavely.
-          <b> Single-View View Synthesis with Multiplane Images</b>
-          <a href="https://single-view-mpi.github.io/single_view_mpi.pdf">[PDF]</a>
-        </li>
-      </ul>
-    </div>
-    <hr>
-    <div class='section'>
       <center><h1>Acknowledgements</h1></center><br>
-      Thanks to
-      <a href="https://angelxuanchang.github.io/">Angel Chang</a>,
-      <a href="https://www.3dunderstanding.org/team.html">Angela Dai</a>, 
-      Richard Tucker and
-      <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>
-      for allowing us to share frames from their datasets.
-      Thanks <a href="https://www.robots.ox.ac.uk/~ow/">Olivia Wiles</a>
-      and <a href="https://www.seas.upenn.edu/~nkolot/">Ajay Jain</a>
-      for polished model repositories which were so helpful in this work.
-      Thanks to <a href="https://jasonqsy.github.io/"> Shengyi Qian</a>,
-      <a href="http://kdexd.xyz/">Karan Desai</a>,
-      <a href="https://mbanani.github.io/">Mohamed El Banani</a>, 
-      <a href="https://jinlinyi.github.io/">Linyi Jin</a>,
-      and <a href="http://relh.net/">Richard Higgins</a> for 
-      the helpful discussions. 
-      Special thanks to the
-      <a href="https://www.eecs.umich.edu/dco/contact.php">Michigan Help Desk (DCO)</a>
-      for after-hours help with machines.
+      Thanks to <a href="https://jinlinyi.github.io/">Linyi Jin</a>, 
+      <a href="https://www.cs.cornell.edu/~ruojin/">Ruojin Cai</a> 
+      and <a href="https://zachteed.github.io/">Zach Teed</a> 
+      for help replicating and building upon their works. 
+      Thanks to <a href="https://mbanani.github.io/">Mohamed El Banani</a>, 
+      <a href="http://kdexd.xyz/">Karan Desai</a> and 
+      <a href="https://nileshkulkarni.github.io/">Nilesh Kulkarni</a> 
+      for their many helpful suggestions. 
+      Thanks to Laura Fink and UM DCO for their tireless 
+      support with computing!
       The webpage template originally came from some
       <a href="https://richzhang.github.io/colorization/">colorful folks</a>.
     </div>

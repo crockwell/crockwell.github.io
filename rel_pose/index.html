@@ -183,8 +183,26 @@
     </center>
     <br>
     <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
     <br>
     <div class='section'>
+      <a id="teaser"></a>
+      <center><a href="./images/teaser.png"></a><img src="./images/teaser.png"></a><br> <!--  height="300px" -->
+
+      <center><span style="font-size:14px"> 
+        Figure 1. We propose three small modifications to a ViT via the
+          Essential Matrix Module, enabling computations similar to the
+          Eight-Point algorithm. The resulting mix of visual and positional
+          features is a good inductive bias for pose estimation.
+      </span></center>
+    </div>
+    <br>
+    <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+
+    <br>
+    <div class='section'>
+      <a id="abstract"></a>
       <center><h1>Abstract</h1></center><br>
       We present a simple baseline for directly estimating the
       relative pose (rotation and translation, including scale) between two images. Deep methods have recently shown
@@ -192,9 +210,27 @@
       applied to a Vision Transformer (ViT) to bring its computations close to the Eight-Point Algorithm. This inductive
       bias enables a simple method to be competitive in multiple
       settings, often substantially improving over the state of the
-      art with strong performance gains in limited data regimes
+      art with strong performance gains in limited data regimes.
     </div>
-    <hr>
+    <br>
+    <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+    <br>
+    <div class='section'>
+      <center><h1>Approach</h1></center><br>
+      <a id="approach"></a>
+      <center><a href="./images/approach.png"></a><img src="./images/approach.png"></a><br> <!--  height="300px" -->
+
+      <center><span style="font-size:14px"> 
+        Figure 2. <b>Essential Matrix Module.</b>
+        We make three small changes to standard ViT Cross-Attention: (1) appending positional encodings
+        to Values, (2) applying a dual softmax on Affinities, and (3) applying bilinear attention.
+      </span></center>
+    </div>
+    <br>
+    <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+    <br>
     <div class='subsection'>
       <center><h1>Paper and Supplemental Material</h1></center><br>
       <div class='row'>

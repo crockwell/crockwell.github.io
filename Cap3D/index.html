@@ -1,0 +1,303 @@
+<html style="--whitebusterR:255; --whitebusterG:250; --whitebusterB:250;" class="whiteBuster ">
+  <head>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="http://www.google.com/jsapi" type="text/javascript"></script> 
+    <script type="text/javascript">google.load("jquery", "1.3.2");</script>
+    
+    <style type="text/css">
+      body {
+          font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+          font-weight:300;
+          font-size:20px;
+          position: relative;
+      }
+      
+      h1 {
+          font-weight:350;
+      }
+      
+      .disclaimerbox {
+          background-color: #eee;		
+          border: 1px solid #eeeeee;
+          border-radius: 10px ;
+          -moz-border-radius: 10px ;
+          -webkit-border-radius: 10px ;
+          padding: 20px;
+      }
+  
+      video {
+          display: block;
+          margin: 0 auto;
+      }
+      
+      img.header-img {
+          height: 140px;
+          border: 1px solid black;
+          border-radius: 10px ;
+          -moz-border-radius: 10px ;
+          -webkit-border-radius: 10px ;
+      }
+      
+      img.rounded {
+          border: 1px solid #eeeeee;
+          border-radius: 10px ;
+          -moz-border-radius: 10px ;
+          -webkit-border-radius: 10px ;
+      }
+      
+      a:link,a:visited
+      {
+          color: #1367a7;
+          text-decoration: none;
+      }
+      a:hover {
+          color: #208799;
+      }
+      
+      td.dl-link {
+          height: 160px;
+          text-align: center;
+          font-size: 22px;
+      }
+      
+      .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+          box-shadow:
+                  0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                  5px 5px 0 0px #fff, /* The second layer */
+                  5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                  10px 10px 0 0px #fff, /* The third layer */
+                  10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+                  15px 15px 0 0px #fff, /* The fourth layer */
+                  15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+                  20px 20px 0 0px #fff, /* The fifth layer */
+                  20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+                  25px 25px 0 0px #fff, /* The fifth layer */
+                  25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+          margin-left: 10px;
+          margin-right: 45px;
+      }
+  
+      .paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+          box-shadow:
+                  0px 0px 1px 1px rgba(0,0,0,0.35); /* The top layer shadow */
+  
+          margin-left: 10px;
+          margin-right: 45px;
+      }
+  
+  
+      .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+          box-shadow:
+                  0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+                  5px 5px 0 0px #fff, /* The second layer */
+                  5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+                  10px 10px 0 0px #fff, /* The third layer */
+                  10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+          margin-top: 5px;
+          margin-left: 10px;
+          margin-right: 30px;
+          margin-bottom: 5px;
+      }
+      
+      .vert-cent {
+          position: relative;
+          top: 50%;
+          transform: translateY(-50%);
+      }
+      
+      hr {
+          border: 0;
+          height: 1px;
+          background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+      }
+
+      div.section {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: 60px;
+        margin-right: 60px;
+        font-size: 20px;
+      }
+      div.mini-section {
+        text-align: center;
+        font-size: 20px;
+        margin-bottom: 30px;
+      }
+      div.subsection {
+        font-size: 20px;
+      }      
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Scalable 3D Captioning with Pretrained Models</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  </head>
+  <body>
+    <br>
+    <center>
+      <span style="font-size:46px">Scalable 3D Captioning with Pretrained Models</span>
+      <table align="center" width="600px">
+        <tbody>
+          <tr>
+            <td align="center" width="100px">
+              <center><span style="font-size:27px"><a href="https://crockwell.github.io/">Chris Rockwell*</a></span></center>
+            </td>
+            <td align="center" width="100px">
+              <center><span style="font-size:27px"><a href="https://tiangeluo.github.io/">Tiange Luo*</a></span></center>
+            </td>
+            <td align="center" width="100px">
+              <center><span style="font-size:27px"><a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee†</a></span></center>
+            </td>
+            <td align="center" width="100px">
+              <center><span style="font-size:27px"><a href="https://web.eecs.umich.edu/~fouhey/">Justin Johnson†</a></span></center>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table align="center" width="650px">
+        <tbody>
+          <tr>
+            <td align="center" width="100px">
+              <center><span style="font-size:27px">University of Michigan</span></center>
+            </td>
+          </tr>
+        <tr>
+          <tbody>
+            <tr>
+              <td align="center" width="100px">
+                <center><span style="font-size:27px">arXiv 2023</span></center>
+              </td>
+            </tr>
+        </tbody>
+      </table>
+      <table align="center" width="920px">
+        <tbody>
+            <td align="center" width="230px">
+              <center><span style="font-size:27px"><a href="https://huggingface.co/datasets/tiange/Cap3D"> [HuggingFace]</a></span></center>
+            </td>
+            <td align="center" width="230px">
+              <center><span style="font-size:27px"><a href="https://github.com/crockwell/Cap3D"> [GitHub]</a></span></center>
+            </td>
+            <td align="center" width="230px">
+              <center><span style="font-size:27px"><a href=""> [arXiv]</a></span></center>
+            </td>
+            <td align="center" width="230px">
+              <center><span style="font-size:27px"><a href="https://crockwell.github.io/rel_pose/rockwell2023.html"> [BibTex]</a></span></center>
+            </td>
+          </tr>
+          <tr></tr>
+        </tbody>
+      </table>
+    </center>
+    <br>
+    <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+    <br>
+    <div class='section'>
+      <a id="teaser"></a>
+      <center><a href="./data/teaser.png"></a><img src="./data/teaser.png" height="270px"></a><br> <!--  height="300px" -->
+
+      <center><span style="font-size:14px"> 
+        Figure 1. Cap3D provides detailed descriptions of 3D objects by leveraging pretrained models in
+        captioning, alignment, and language to consolidate multi-view information.
+      </span></center>
+    </div>
+    <br>
+    <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+
+    <br>
+    <div class='section'>
+      <a id="abstract"></a>
+      <center><h1>Abstract</h1></center><br>
+      We introduce Cap3D, an automatic approach for generating descriptive text for
+      3D objects. This approach utilizes pretrained models from image captioning,
+      image-text alignment, and LLM to consolidate captions from multiple views of
+      a 3D asset, completely side-stepping the time-consuming and costly process of
+      manual annotation. We apply Cap3D to the recently introduced large-scale 3D
+      dataset, Objaverse, resulting in 660k 3D-text pairs. Our evaluation, conducted using
+      41k human annotations from the same dataset, demonstrates that Cap3D surpasses
+      human-authored descriptions in terms of quality, cost, and speed. Through effective
+      prompt engineering, Cap3D rivals human performance in generating geometric de-
+      scriptions on 17k collected annotations from the ABO dataset. Finally, we finetune
+      text-to-3D models on Cap3D and human captions, and show Cap3D outperforms;
+      and benchmark the SOTA including Point·E, Shape·E, and DreamFusion.
+    </div>
+    <br>
+    <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+    <br>
+    <div class='section'>
+      <center><h1>Approach</h1></center><br>
+      <a id="approach"></a>
+      <center><a href="./data/approach.png"></a><img src="./data/approach.png" height="240px"></a><br> <!--  height="300px" -->
+
+      <center><span style="font-size:14px"> 
+        Figure 2. <b>Overview of Cap3D.</b> Left to Right: (1) Render 3D objects from M = 8 camera angles
+        to capture object details (2) Generate N = 5 image captions per rendered image using BLIP2; (3)
+        Select one caption for each image based on its similarity to the image encoding using CLIP; (4) Use
+        GPT4 to consolidate all selected captions into a final, summary of the object.
+      </span></center>
+    </div>
+    <br>
+    <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
+
+    <br>
+    <div class='subsection'>
+      <center><h1>Paper and Supplemental Material</h1></center><br>
+      <div class='row'>
+        <div class='col-sm-2'></div>
+        <div class='col-sm-4 text-center'> 
+          <a href=""><img class="layered-paper-big" style="height:175px" src="./data/preview.png"></a>
+        </div>
+        <div class='col-sm-4'>
+          Rockwell, Luo, Lee and Johnson. <br>
+          Scalable 3D Captioning with Pretrained Models. <br>
+          arXiv 2023. (Hosted on <a href="">arXiv</a>)
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+    <div class='mini-section'>
+      <a href="./data/paper.pdf">[Paper]</a>
+      <a href="./data/supp.pdf">[Supplemental]</a>
+      <a href="https://github.com/crockwell/Cap3D/">[Code]</a>
+    </div>
+    <table align="center" width="600px">
+      <div>
+        <tr>
+          <pre class="citation">
+            @article{Rockwell2023,
+              author = {Chris Rockwell and Tiange Luo and Honglak Lee and Justin Johnson},
+              title = {Scalable 3D Captioning with Pretrained Models},
+              journal = {arXiv},
+              year = 2023
+            }
+          </pre>
+        </tr> 
+      </div>
+    </table>
+    <hr>
+    <div class='section'>
+      <center><h1>Acknowledgements</h1></center><br>
+      Thanks to <a href="https://mbanani.github.io/">Mohamed El Banani</a>, 
+      <a href="http://kdexd.xyz/">Karan Desai</a>, 
+      <a href="https://nileshkulkarni.github.io/">Ang Cao</a> and 
+      <a href="https://jinlinyi.github.io/">Linyi Jin</a>
+      for their many helpful suggestions. 
+      Thanks <a href="https://mattdeitke.com/">Matt Deitke</a> for helping with Objaverse-related questions. 
+      The webpage template originally came from some
+      <a href="https://richzhang.github.io/colorization/">colorful folks</a>.
+    </div>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-75863369-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

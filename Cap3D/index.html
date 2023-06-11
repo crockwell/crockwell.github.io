@@ -195,9 +195,9 @@
     <br>
     <div class='section'>
       <a id="teaser"></a>
-      <center><a href="./data/teaser.png"></a><img src="./data/teaser.png" height="270px"></a><br> <!--  height="300px" -->
+      <center><a href="./data/teaser.png"></a><img src="./data/teaser.png" height="450px"></a><br> <!--  height="300px" -->
 
-      <center><span style="font-size:14px"> 
+      <center><span style="font-size:18px"> 
         Figure 1. Cap3D provides detailed descriptions of 3D objects by leveraging pretrained models in
         captioning, alignment, and language to consolidate multi-view information.
       </span></center>
@@ -209,6 +209,7 @@
     <br>
     <div class='section'>
       <a id="abstract"></a>
+      <span style="font-size:18px"> 
       <center><h1>Abstract</h1></center><br>
       We introduce Cap3D, an automatic approach for generating descriptive text for
       3D objects. This approach utilizes pretrained models from image captioning,
@@ -222,6 +223,7 @@
       scriptions on 17k collected annotations from the ABO dataset. Finally, we finetune
       text-to-3D models on Cap3D and human captions, and show Cap3D outperforms;
       and benchmark the SOTA including Point·E, Shape·E, and DreamFusion.
+    </span>
     </div>
     <br>
     <hr style="background-image: linear-gradient(to right, rgba(1, 1, 1, 0), rgba(0, 0, 0, 0.75), rgba(1, 1, 1, 0));">
@@ -232,7 +234,7 @@
       <a id="approach"></a>
       <center><a href="./data/approach.png"></a><img src="./data/approach.png" height="240px"></a><br> <!--  height="300px" -->
 
-      <center><span style="font-size:14px"> 
+      <center><span style="font-size:18px"> 
         Figure 2. <b>Overview of Cap3D.</b> Left to Right: (1) Render 3D objects from M = 8 camera angles
         to capture object details (2) Generate N = 5 image captions per rendered image using BLIP2; (3)
         Select one caption for each image based on its similarity to the image encoding using CLIP; (4) Use

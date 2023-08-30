@@ -38,6 +38,18 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-153849999-1');
+
+
+
+  var images = ['images/prof_crop_circle1.png','images/prof_crop_circle2.png','images/prof_crop_circle3.png'], 
+    index = 0, // starting index
+    maxImages = images.length - 1;
+  var timer = setInterval(function() {
+    var curImage = images[index];
+    index = (index == maxImages) ? 0 : ++index;
+    // set your image using the curImageVar 
+    $('div.mystuff img').attr('src','images/'+curImage);
+  }, 500);
 </script>
 
 </head>
@@ -77,7 +89,7 @@
               </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/prof_crop.png"><img style="width:100%;max-width:100%" alt="profile photo" src="images/prof_crop_circle.png" class="hoverZoomLink"></a>
+              <img style="width:100%;max-width:100%" alt="profile photo" src="images/prof_crop_circle1.png" class="hoverZoomLink">
             </td>
           </tr>
         </tbody></table>

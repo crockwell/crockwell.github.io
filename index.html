@@ -38,23 +38,25 @@
   gtag('js', new Date());
 
   gtag('config', 'UA-153849999-1');
+</script>
 
+<script type="text/javascript">
+  var current=1; var total=3; var time;
+  function imageChanger() { 
+    time=setTimeout("change()", 500); 
+  }
+  function changeImage() { 
+    current++;
+    if(current > total) currPic=1;
+    document.getElementById("profile").src="images/prof_crop_circle"+current+".png";
+    setupPicChange(); 
+  }
 
-
-  var images = ['images/prof_crop_circle1.png','images/prof_crop_circle2.png','images/prof_crop_circle3.png'], 
-    index = 0, // starting index
-    maxImages = images.length - 1;
-  var timer = setInterval(function() {
-    var curImage = images[index];
-    index = (index == maxImages) ? 0 : ++index;
-    // set your image using the curImageVar 
-    $('div.mystuff img').attr('src','images/'+curImage);
-  }, 500);
 </script>
 
 </head>
 
-<body>
+<body onLoad="imageChanger();">
   <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
@@ -67,17 +69,19 @@
               <p>I am a Ph.D. candidate in Computer Science and Engineering at the <a href="https://www.cse.umich.edu/">University of Michigan</a>.
                 I do research in computer vision and machine learning and am advised by
                 <a href="https://web.eecs.umich.edu/~fouhey/">David F. Fouhey</a> and <a href="https://web.eecs.umich.edu/~justincj/">Justin Johnson</a>.
-                <!-- I am currently interning in Computational Photography Research at <a href="https://tech.fb.com/ar-vr/">Meta Reality Labs</a>. 
-                My managers are <a href="https://hytseng0509.github.io/">Hung-Yu Tseng</a> and <a href="http://johanneskopf.de/">Johannes Kopf</a>. 
-                -->
-                <!-- I also obtained my Master's at the University of Michigan, where I was advised by David Fouhey and 
+                During grad school, I have also had the pleasure of working with <a href="https://web.eecs.umich.edu/~honglak/">Honglak Lee</a> at UM, 
+                <a href="https://jbhuang0604.github.io/">Jia-Bin Huang</a> at Meta Reality Labs,
+                and <a href="https://www.cs.princeton.edu/~jiadeng/">Jia Deng</a> at Princeton.
+                <!--<a href="https://hytseng0509.github.io/">Hung-Yu Tseng</a>, 
+                Jia Bin Huang and <a href="http://johanneskopf.de/">Johannes Kopf</a> at <a href="https://tech.fb.com/ar-vr/">Meta Reality Labs</a>. 
+                 I also obtained my Master's at the University of Michigan, where I was advised by David Fouhey and 
                 <a href="https://www.cs.princeton.edu/~jiadeng/">Jia Deng</a>. 
                 -->
               </p>
               <!--<p> Before grad school, I worked as a trader at <a href="https://www.citadel.com/">Citadel LLC</a>, where I applied statistical arbitrage in fixed income. Earlier, I structured exotic options and created systematic hedging strategies at <a href="https://group.bnpparibas/en/">BNP Paribas</a>. I received my Bachelor's at the University of Michigan, where I researched High Frequency Trading and AI under <a href="https://strategicreasoning.org/michael-p-wellman/"> Michael Wellman</a>. 
               </p>
               -->
-              <p> Feel free to reach out! My email is cnris at umich dot edu
+              <p> I am pursuing RS internships for 2024! Please feel free to reach out: cnris at umich dot edu
               </p>
               <p style="text-align:center">
                 <a href="https://github.com/crockwell">Github</a> &nbsp/&nbsp
@@ -89,7 +93,7 @@
               </p>
             </td>
             <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="images/prof_crop_circle1.png" class="hoverZoomLink">
+              <img id="profile" style="width:100%;max-width:100%" alt="profile photo" src="images/prof_crop_circle1.png" class="hoverZoomLink">
             </td>
           </tr>
         </tbody></table>
@@ -442,7 +446,70 @@
               </p>
             </td>
           </tr>
+          
+        </tbody></table>
+
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+          <tr>
+            <td>
+              <heading>Experience</heading>
+            </td>
+          </tr>
+        </tbody></table>
+        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+              <img style="display:block;" width="100%" src="images/ai4all.jpg" alt="um2">
+            </td>
+            <td width="65%" valign="center">
+                <a href="https://cedo.engin.umich.edu/ai4all/">Meta Reality Labs</a>, Summer-Fall 2022: Project Instructor
+                <br> Summer 2021: Application Reviewer, Curriculum Advisory Board
+                <br>
+                Michigan AI4ALL Lead: David F. Fouhey
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+              <img style="display:block;" width="100%" src="images/AURA.jpg" alt="um2">
+            </td>
+            <td width="65%" valign="center">
+               <a href="https://aura.engin.umich.edu/">African Undergraduate Research Adventure (AURA)</a>, Summer 2020: Research Mentor
+                <br>
+                Research Advisor: David F. Fouhey
+            </td>
+          </tr>
           -->
+          <!-- 
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle">
+              <img style="display:block;" width="100%" src="images/um.jpg" alt="um2">
+            </td>
+            <td width="65%" valign="center">
+                EECS 498/598 Deep Learning, Winter 2019: Grader
+                <br>
+                Instructor: Honglak Lee
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:20px;width:35%;vertical-align:middle"><a href="https://blog.supplysideliberal.com/"><img style="display:block;" width="100%" src="images/ssl.JPG"></a></td>
+            <td width="65%" valign="center">
+              Guest blog post on Miles Kimball's Economics blog <em>Confessions of a Supply Side Liberal</em>
+                <br>
+                <a href="http://blog.supplysideliberal.com/post/114381051097/chris-rockwell-has-a-masters-degree-become-a">post</a>
+            </td>
+          </tr>
+        -->
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p>
+                <a href="https://jonbarron.info/">Template</a>
+              </p>
+            </td>
+          </tr>
         </tbody></table>
         
           

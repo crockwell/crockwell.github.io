@@ -47,7 +47,7 @@
   }
   function changeImage() { 
     current++;
-    if(current > total) currPic=1;
+    if(current > total) current=1;
     document.getElementById("profile").src="images/prof_crop_circle"+current+".png";
     imageChanger(); 
   }

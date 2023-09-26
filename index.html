@@ -329,127 +329,15 @@
               <br>
               Advisor: Jia Deng 
               <br>  
-              <a href="https://github.com/crockwell/pytorch_stacked_hourglass_attention">code: attention</a> / <a href="http://www-personal.umich.edu/~cnris/attention_2hg/checkpoint.pt">pretrained model, 2HG attention</a>
+              <a href="https://github.com/princeton-vl/pytorch_stacked_hourglass">Github, Hourglass Implementation</a>
+              <a href="https://github.com/crockwell/pytorch_stacked_hourglass_attention">Github, Hourglass Extension</a>
               <br>
-                <a href="https://github.com/crockwell/pytorch_stacked_hourglass_cutout">code: regularization</a> / <a href="http://www-personal.umich.edu/~cnris/regularization_8hg/checkpoint.pt">pretrained model, 8HG regularization</a>
-              <p> We increase performance of <em> Newell et al.</em>'s <a href="https://arxiv.org/pdf/1603.06937.pdf">Stacked Hourglass Networks </a> on MPII using a decoder network as attention, along with 
-                cutout and vertical flipping.
-              
-               <!--<br> Using the 2HG model, this improved validation performance 0.4% and improved performance 0.7% when also using cutout and vertical flipping. On the 8HG model, we were also able to improve test performance from 90.9% to 91.3% by simply adding cutout and vertical flipping. Finally, we increased precision of network confidence and explored utilizing confidence for curriculum sampling of tail cases.
-                -->
-              
-                In addition, we improved precision of network confidence and explored utilizing confidence for curriculum sampling of tail cases.
+              <p> I implement <em> Newell et al.</em>'s <a href="https://arxiv.org/pdf/1603.06937.pdf">Stacked Hourglass Networks</a> <a href="https://github.com/princeton-vl/pytorch_stacked_hourglass"> in Pytorch
+                and improve performance using a decoder network as attention.
               </p>
             </td>
           </tr>
-          
-          <!-- 
-          <tr>
-            <td style="padding:20px;width:35%;vertical-align:middle">
-              <a href="images/AI_pic.JPG"><img src="images/AI_pic.JPG" alt="clean-usnob" style="display:block;" width="100%"></a>
-            </td>
-            <td width="65%" valign="middle">
-              <papertitle>Evaluating Scene Graph-Generated Images using Visual Question Answering</papertitle>
-              <br>
-              <strong>Chris Rockwell</strong>.
-              <br>
-              Course project, EECS 692 Advanced AI, Winter 2019.
-              <br>
-              Instructor: John Laird. 
-              <br>  
-              <a href="data/AI_report.pdf">presentation</a> / <a href="data/sg_vqa.pdf">report</a>
-              <p> I replicate and summarize
-                  <a href="https://arxiv.org/pdf/1804.01622.pdf">
-                      <papertitle>
-                          Image Generation from Scene Graphs
-                      </papertitle>
-                  </a>
-                  , and evaluate replicated generated images, original generated images, and ground truths using VQA.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:35%;vertical-align:middle">
-              <a href="images/cnn_pic.JPG"><img src="images/cnn_pic.JPG" alt="clean-usnob" style="display:block;" width="100%"></a>
-            </td>
-            <td width="65%" valign="middle">
-              <papertitle>Replicating and Improving Stacked Hourglass Networks for Human Pose Estimation</papertitle>
-              <br>
-              <strong>Chris Rockwell</strong>, Uzziel Cortez, Eric Huang.
-              <br>
-              Course project, EECS 545 Machine Learning, Fall 2018.
-              <br>
-              Instructor: Clayton Scott. 
-              <br>  
-              <a href="data/CNN_joint_estimation.pdf">report</a> / <a href="https://github.com/princeton-vl/pytorch_stacked_hourglass">code</a> / <a href="http://www-personal.umich.edu/~cnris/original_8hg/checkpoint.pt">pretrained model, 8HG</a>
-              <p> We replicate and improve upon validation accuracy from
-                  <a href="https://arxiv.org/pdf/1603.06937.pdf">
-                      <papertitle>
-                          Stacked Hourglass Networks for Human Pose Estimation
-                      </papertitle>
-                  </a>
-                  using <a href="https://arxiv.org/pdf/1412.6980.pdf">Adam</a> and larger batch size. I led implementation of the project and it was jointly useful for research. My Pytorch implementation is published in the <a href="https://github.com/princeton-vl/pytorch_stacked_hourglass"> princeton-vl Github</a>.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:35%;vertical-align:middle">
-              <a href="images/gta.png"><img src="images/gta.png" alt="clean-usnob" style="display:block;" width="100%"></a>
-            </td>
-            <td width="65%" valign="middle">
-              <papertitle>GTA Perception</papertitle>
-              <br>
-              Richard Higgins, Parth Chopra, <strong>Chris Rockwell</strong>, Sahib Dhanjal, Ung Hee Lee.
-              <br>
-              Course project, EECS 598/ROB 535 Self-Driving Cars, Fall 2018.
-              <br>
-              Instructors: Matthew Johnson-Roberson and Ram Vasudevan
-              <br>  
-              <a href="https://github.com/relh/gta_perception">code</a>
-              <p> We finetune a Squeeze and Excitation ResNet classify objects appearing in road-scene images in the <a href="https://arxiv.org/abs/1610.01983"><papertitle>Driving in the Matrix </papertitle></a> dataset. With improved sampling and data augmentation, we finished top 10 in the class. I helped with implementation and improved data augmentation.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:35%;vertical-align:middle">
-              <a href="images/data_mining_pic.JPG"><img src="images/data_mining_pic.JPG" alt="clean-usnob" style="display:block;" width="100%"></a>
-            </td>
-            <td width="65%" valign="middle">
-              <papertitle>Link Prediction on the Patent Citation Network</papertitle>
-              <br>
-              Samuel Chen, David Dang, Robert Macy, <strong>Chris Rockwell</strong>.
-              <br>
-              Course project, <a href="http://web.eecs.umich.edu/~dkoutra/courses/W19_598/">EECS 598 Advanced Data Mining</a>, Winter 2019.
-              <br>
-              Instructor: Danai Koutra. 
-              <br>  
-              <a href="data/data_mining_poster.pdf">poster</a> / <a href="data/LP_patent.pdf">report</a> / <a href="https://github.com/crockwell/SDNE">code</a>
-              <p> 
-              We compare several methods for link prediction on partitions of the Patent Citation Network dataset for the first time. The very sparse nature of this graph yielded low performance compared to a more typical dataset, but methods performed well in a temporal setting. I led temporal experiments and adapted representation learning method <a href="https://www.kdd.org/kdd2016/papers/files/rfp0191-wangAemb.pdf">SDNE</a> for our task.
-              </p>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:35%;vertical-align:middle">
-              <a href="images/LA.JPG"><img src="images/LA.JPG" alt="clean-usnob" style="display:block;" width="100%"></a>
-            </td>
-            <td width="65%" valign="middle">
-              <papertitle>Market Fragmentation and the Latency Arms Race</papertitle>
-              <br>
-              Undergraduate Research, Strategic Reasoning Group. Summer 2013.
-              <br>
-              Advisor: Michael Wellman
-              <br>  
-              <a href="data/SIREU_poster.pdf">poster</a> / <a href="data/SIREU_pres.pdf">presentation</a>
-              <br>
-              I was featured in a <a href="https://www.youtube.com/watch?v=1-1-UpBoc7w">UMSI Youtube video</a>. 
-              <p> I assisted Erik Brinkman in expanding the agent-based latency arbitrage simulation of <a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.306.9477&rep=rep1&type=pdf"> Wah and Wellman </a> to model a prisoner's dilemma in the high-frequency trading space.
-              </p>
-            </td>
-          </tr>
-          
-        </tbody></table>
-        -->
+
 
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
           <tr>
@@ -458,15 +346,15 @@
             </td>
           </tr>
         </tbody></table>
-        <table width="70%" align="center" border="0" cellpadding="20"><tbody>
+        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
           <tr>
             <td style="padding:20px;width:35%;vertical-align:middle">
               <img style="display:block;" width="100%" src="images/meta.png" alt="meta">
             </td>
             <td width="65%" valign="center">
-              <papertitle>Meta Reality Labs, Computational Photography Research</papertitle>, Summer-Fall 2022.
-                Research Scientist Intern.
-                <br> Hosts: Hung-Yu Tseng, Jia-Bin Huang, and Johannes Kopf
+              <papertitle>Meta Reality Labs</papertitle>, Summer-Fall 2022.
+              <br> Research Scientist Intern (Computational Photography)
+              <br> Hosts: Hung-Yu Tseng, Jia-Bin Huang, and Johannes Kopf
             </td>
           </tr>
           <tr>
@@ -476,7 +364,7 @@
               </td>
               <td width="65%" valign="center">
                 <papertitle>TuringSense, INC.</papertitle>, Winter-Spring 2021.
-                  Technical Consultant (Computer Vision).
+                <br> Technical Consultant (Computer Vision).
               </td>
             </tr>
           <tr>
@@ -508,7 +396,7 @@
             </td>
           </tr>
         </tbody></table>
-        <table width="70%" align="center" border="0" cellpadding="20"><tbody>
+        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
           <tr>
             <td style="padding:20px;width:35%;vertical-align:middle">
               <img style="display:block;" width="100%" src="images/ai4all.jpg" alt="um2">

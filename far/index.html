@@ -70,7 +70,7 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">FAR: Flexible, Accurate and Robust 6DoF Relative Camera Pose Estimation</h1>
           <h2 class="title is-5 publication-title">arXiv 2023</h2>
-          <div class="is-size-6 publication-authors">
+          <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://crockwell.github.io/">Chris Rockwell</a><sup>1</sup></span>,
             </span>
@@ -150,12 +150,12 @@
 
 <section class="hero teaser">
   <div class="container is-max-desktop">
-    <div class="hero-body">
+    <div class="column is-four-fifths">
       <img src="./data/teaser.png" alt="FAR Teaser">
       <h2 class="subtitle has-text-centered">
-        Figure 1. <b>Precise and robust 6DoF pose estimation.</b> Correspondence Estimation + Solver (here LoFTR, RANSAC)
-        methods produce precise outputs for moderate rotations, but are not robust to large rotations (left), and cannot produce 
-        translation scale. Learning-based methods (here LoFTR with 8-Point ViT [61] head) produce scale (right) and are more robust, 
+        Figure 1. <b>Precise and robust 6DoF pose estimation.</b> Correspondence Estimation + Solver methods (here LoFTR, RANSAC) produce precise outputs 
+        for moderate rotations, but are not robust to large rotations (left), and cannot produce 
+        translation scale. Learning-based methods (here LoFTR with 8-Point ViT head) produce scale (right) and are more robust, 
         but lack precision (left). FAR leverages both for precise and robust prediction, including scale.
       </h2>
     </div>
@@ -202,11 +202,10 @@
 
     <!-- Approach. -->
     <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
+        <div class="hero-body">
             <h2 class="title is-3">Approach</h2>
-            <div class="content has-text-justified">
             <img src="./data/approach.png" alt="FAR Approach">
-            <p>
+            <h2 class="subtitle has-text-centered">
               Figure 3. <b>Overview.</b> Given dense features and correspondences, FAR’s Transformer produces camera poses (in square boxes <span style="background-color: #E69F00">&#9633;</span>) through
               a transformer (round box <span style="background-color: #E69F00">&#9634;</span>) and classical solver (round box <span style="background-color: #57B4E9">&#9634;</span>). 
               In the first round, the solver produces a pose <span style="background-color: #57B4E9">T<sub>s</sub></span>. FAR’s pose transformer
@@ -218,8 +217,7 @@
               to produce the final result <span style="background-color: #019E73">T</span>.
               With few correspondences, <span style="background-color: #F0E442">T<sub>1</sub></span> helps solver output, while the network learns to weigh Transformer 
               predictions more heavily; with many correspondences, solver output is often good, so the network relies mostly on solver output.
-            </p>
-            </div>
+            </h2>
         </div>
     </div>
 
@@ -227,7 +225,7 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{Rockwell2023,
-    author    = {Chris Rockwell and Nilesh Kulkarni and Linyi Jin and Jeong Joon Park and Justin Johnson and David F. Fouhey},
+    author = {Chris Rockwell and Nilesh Kulkarni and Linyi Jin and Jeong Joon Park and Justin Johnson and David F. Fouhey},
     title = {FAR: Flexible, Accurate and Robust 6DoF Relative Camera Pose Estimation},
     journal = {arXiv},
     year = 2023

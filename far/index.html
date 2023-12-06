@@ -198,9 +198,8 @@
       <div class="column is-full">
         <h2 class="title is-3">Approach</h2>
         <img src="./data/approach.png" alt="FAR Approach">
-        <div class="content has-text-justified">
-          <p>
-          Given dense features and correspondences, FAR’s Transformer produces camera poses (in square boxes <span style="background-color: #E69F00">&#9633;</span>) through
+        <h2 class="subtitle has-text-centered">
+          Figure 3. <b>Overview.</b> Given dense features and correspondences, FAR’s Transformer produces camera poses (in square boxes <span style="background-color: #E69F00">&#9633;</span>) through
           a transformer (round box <span style="background-color: #E69F00">&#9634;</span>) and classical solver (round box <span style="background-color: #57B4E9">&#9634;</span>). 
           In the first round, the solver produces a pose <span style="background-color: #57B4E9">T<sub>s</sub></span>. FAR’s pose transformer
           averages this with its own prediction <span style="background-color: #E69F00">T<sub>t</sub></span> via weight <span style="background-color: #019E73">w</span>, 
@@ -211,8 +210,7 @@
           to produce the final result <span style="background-color: #019E73">T</span>.
           With few correspondences, <span style="background-color: #F0E442">T<sub>1</sub></span> helps solver output, while the network learns to weigh Transformer 
           predictions more heavily; with many correspondences, solver output is often good, so the network relies mostly on solver output.
-        </p>
-      </div>
+        </h2>
     </div>
   </div>
 </section>

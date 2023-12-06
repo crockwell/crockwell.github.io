@@ -148,9 +148,12 @@
   </div>
 </section>
 
-<section class="hero teaser">
-  <div class="columns is-centered has-text-centered">
-    <div class="container is-max-desktop">
+  
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <img src="./data/teaser.png" alt="FAR Teaser">
         <h2 class="subtitle has-text-centered">
@@ -159,16 +162,9 @@
           translation scale. Learning-based methods (here LoFTR with 8-Point ViT head) produce scale (right) and are more robust, 
           but lack precision (left). FAR leverages both for precise and robust prediction, including scale.
         </h2>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+
+
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
@@ -187,66 +183,37 @@
           </p>
         </div>
       </div>
-    </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video.
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/fjRnFL91EZc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+      <div class="column is-full">
+        <h2 class="title is-3">Approach</h2>
+        <img src="./data/approach.png" alt="FAR Approach">
+        <div class="content has-text-justified">
+          <p>
+          Given dense features and correspondences, FAR’s Transformer produces camera poses (in square boxes <span style="background-color: #E69F00">&#9633;</span>) through
+          a transformer (round box <span style="background-color: #E69F00">&#9634;</span>) and classical solver (round box <span style="background-color: #57B4E9">&#9634;</span>). 
+          In the first round, the solver produces a pose <span style="background-color: #57B4E9">T<sub>s</sub></span>. FAR’s pose transformer
+          averages this with its own prediction <span style="background-color: #E69F00">T<sub>t</sub></span> via weight <span style="background-color: #019E73">w</span>, 
+          to yield the round 1 pose <span style="background-color: #F0E442">T<sub>1</sub></span>. 
+          <span style="background-color: #F0E442">T<sub>1</sub></span> pose serves as a prior for the classic solver,
+          which produces an updated pose <span style="background-color: #BB4D89">T<sub>u</sub></span>. 
+          This is combined with an additional estimate of <span style="background-color: #E69F00">T<sub>t</sub></span> and weight <span style="background-color: #019E73">w</span> 
+          to produce the final result <span style="background-color: #019E73">T</span>.
+          With few correspondences, <span style="background-color: #F0E442">T<sub>1</sub></span> helps solver output, while the network learns to weigh Transformer 
+          predictions more heavily; with many correspondences, solver output is often good, so the network relies mostly on solver output.
+        </p>
       </div>
     </div>
-    Paper video. -->
-
-
-    <!-- Approach. -->
-    <div class="columns is-centered has-text-centered">
-        <div class="column is-full">
-            <h2 class="title is-3">Approach</h2>
-            <img src="./data/approach.png" alt="FAR Approach">
-            <div class="content has-text-justified">
-              <p>
-              Given dense features and correspondences, FAR’s Transformer produces camera poses (in square boxes <span style="background-color: #E69F00">&#9633;</span>) through
-              a transformer (round box <span style="background-color: #E69F00">&#9634;</span>) and classical solver (round box <span style="background-color: #57B4E9">&#9634;</span>). 
-              In the first round, the solver produces a pose <span style="background-color: #57B4E9">T<sub>s</sub></span>. FAR’s pose transformer
-              averages this with its own prediction <span style="background-color: #E69F00">T<sub>t</sub></span> via weight <span style="background-color: #019E73">w</span>, 
-              to yield the round 1 pose <span style="background-color: #F0E442">T<sub>1</sub></span>. 
-              <span style="background-color: #F0E442">T<sub>1</sub></span> pose serves as a prior for the classic solver,
-              which produces an updated pose <span style="background-color: #BB4D89">T<sub>u</sub></span>. 
-              This is combined with an additional estimate of <span style="background-color: #E69F00">T<sub>t</sub></span> and weight <span style="background-color: #019E73">w</span> 
-              to produce the final result <span style="background-color: #019E73">T</span>.
-              With few correspondences, <span style="background-color: #F0E442">T<sub>1</sub></span> helps solver output, while the network learns to weigh Transformer 
-              predictions more heavily; with many correspondences, solver output is often good, so the network relies mostly on solver output.
-            </p>
-        </div>
-    </div>
-
-    <!-- 
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-          <h2 class="title is-3">Approach</h2>
-          <img src="./data/approach2.png" alt="FAR Approach">
-          <div class="content has-text-justified">
-            <p>
-            With few correspondences, <span style="background-color: #F0E442">T<sub>1</sub></span> helps solver output, while the network learns to weigh Transformer 
-            predictions more heavily; with many correspondences, solver output is often good, so the network relies mostly on solver output.
-          </p>
-      </div>
   </div>
-  -->
+</section>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{Rockwell2023,
-    author = {Chris Rockwell and Nilesh Kulkarni and Linyi Jin and Jeong Joon Park and Justin Johnson and David F. Fouhey},
-    title = {FAR: Flexible, Accurate and Robust 6DoF Relative Camera Pose Estimation},
-    journal = {arXiv},
-    year = 2023
-}</code></pre>
+      <pre><code>@article{Rockwell2023,
+        author = {Chris Rockwell and Nilesh Kulkarni and Linyi Jin and Jeong Joon Park and Justin Johnson and David F. Fouhey},
+        title = {FAR: Flexible, Accurate and Robust 6DoF Relative Camera Pose Estimation},
+        journal = {arXiv},
+        year = 2023
+    }</code></pre>
   </div>
 </section>
 
